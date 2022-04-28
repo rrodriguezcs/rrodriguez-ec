@@ -32,3 +32,29 @@ Route::resource('users', UserController::class);
 Route::resource('notes', NoteController::class)->except(['create','store']);
 Route::get('/notes/create/{equipment}', [NoteController::class,'create'])->name('notes.create');
 Route::post('/notes/create/{equipment}', [NoteController::class,'store'])->name('notes.store');
+
+/*
+Route::resource('/customers', CustomersController::class);
+Route::resource('/equipment', EquipmentController::class);
+Route::resource('/manufacturer', ManufacturerController::class);
+Route::resource('/notes', NotesController::class);
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/db-migrate', function () {
+    Artisan::call('migrate');
+    echo Artisan::output();
+});
+
+Route::get('/db-test', function () {
+    try {         
+         echo \DB::connection()->getDatabaseName();     
+    } catch (\Exception $e) {
+          echo 'None';
+    }
+});
+
+resolve(\Illuminate\Routing\UrlGenerator::class)->forceScheme('https');
+*/
